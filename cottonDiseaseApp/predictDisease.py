@@ -20,11 +20,7 @@ def imagePred(imageName):
     print(imageName, "------")
     # os.chdir("./media")
     print(os.getcwd())
-    model = load_model(
-        "D:/django projects/cottonDiseaseProject/media/diseasePredictionModel.h5")
-
-    file_path = 'image.jpg'
-    print("D:/django projects/cottonDiseaseProject" + imageName, " 1111")
+    model = load_model("D:/django projects/cottonDiseaseProject/media/diseasePredictionModel.h5")
     test_image = cv2.imread(
         "D:/django projects/cottonDiseaseProject" + imageName)
     test_image = cv2.cvtColor(test_image, cv2.COLOR_BGR2RGB)

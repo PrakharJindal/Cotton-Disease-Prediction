@@ -17,7 +17,7 @@ def home(request):
         
         if myfile.content_type.split("/")[0] != "image":
             return render(request, 'core/CottonDiseasePrediction.html', {
-                'error_file': "Error : Please Upload a Video",
+                'error_file': "Error : Please Upload a Image",
                 'uploaded_file_url': ""
             })
         if myfile.size > 23068672:
@@ -33,13 +33,7 @@ def home(request):
             output_pred = imagePred(uploaded_file_url)
             # attach_file_name = output_file
             # Open the file as binary mode
-            try:
-                print("sent")
-            except:
-                return render(request, 'core/CottonDiseasePrediction.html', {
-                    'error_file': "Error : Email Not Sent",
-                    'uploaded_file_url': output_pred
-                })
+           
             return render(request, 'core/CottonDiseasePrediction.html', {
                 'error_file': output_pred,
                 # 'uploaded_file_url': output_file
