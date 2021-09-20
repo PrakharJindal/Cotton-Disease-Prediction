@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Cotton Disease Prediction</title>
+    <link rel="stylesheet" type="text/css" href="media/view.css" media="all" />
+    <script type="text/javascript" src="media/view.js"></script>
+  </head>
+  <body id="main_body">
+    <img id="top" src="media/top.png" alt="" />
+    <div id="form_container">
+      <form class="appnitro" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <div class="form_description">
+          <h2>COTTON DISEASE PREDICTION</h2>
+        </div>
+        <ul>
+          <div style="flex-direction: row" id="li_11">
+            <div>
+              <label
+                style="color: white; font-size: 16px"
+                class="description"
+                for="element_1"
+                >Sample</label
+              >
+              <p></p>
+              <img
+                src="media/leaf_photo.jpg"
+                alt="Italian Trulli"
+                width="110"
+                height="110"
+              />
+            </div>
+            <div>
+              <li id="01">
+                <label
+                  style="color: white; font-size: 16px"
+                  class="description"
+                  for="element_1"
+                  >Output :-
+                </label>
+                <label
+                  style="color: white; font-size: 14px"
+                  class="description"
+                  for="element_1"
+                  >The plant is diseased</label
+                >
+              </li>
+              <p></p>
+            </div>
+          </div>
+          <p></p>
+          <li id="li_12">
+            <label
+              style="color: white; font-size: 16px; margintop: 12px"
+              class="description"
+              for="element_1"
+              >Upload Cotton Leaf / Plant Image</label
+            >
+            <p></p>
+            <div>
+              <input class="element file" type="file" name="myfile" />
+            </div>
+          </li>
+          <p></p>
+
+          <li class="buttons">
+            <button type="submit">Predict</button>
+          </li>
+        </ul>
+        <li>
+          <p></p>
+          <p></p>
+          {% if error_file %}
+          <p>{{ error_file }}</p>
+          {% endif %}
+          <p></p>
+        </li>
+        <li>
+          <p></p>
+          <p></p>
+          {% if uploaded_file_url %}
+          <p>
+            Download converted file :
+            <a href="{{ uploaded_file_url }}" download
+              >{{ uploaded_file_url }}</a
+            >
+          </p>
+          {% endif %}
+          <p></p>
+        </li>
+      </form>
+    </div>
+    <img id="bottom" src="media/bottom.png" alt="" />
+  </body>
+</html>
