@@ -39,8 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cottonDiseaseApp',
-    'rest_framework',
-    'corsheaders',  # new
 ]
 
 MIDDLEWARE = [

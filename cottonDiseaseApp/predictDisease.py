@@ -1,10 +1,8 @@
 import numpy as np
-import pandas as pd
-import keras
-import tensorflow as tf
+
 import cv2
-import os
-from tensorflow.keras.models import load_model
+
+from keras.models import load_model
 
 
 def imagePred(imageName):
@@ -15,7 +13,7 @@ def imagePred(imageName):
     #               1: 'diseased cotton plant',
     #               2: 'fresh cotton leaf',
     #               3: 'fresh cotton plant'}
-    class_dict = {0: 'Cotton leaf is Diseases.',
+    class_dict = {0: 'Cotton leaf is Diseased.',
                   1: 'Cotton plant is Diseased.',
                   2: 'Its a fresh Cotton leaf',
                   3: 'Its a fresh Cotton plant'}
